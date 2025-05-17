@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class LogConsumer {
-    @KafkaListener(topics="log.created")
+    @KafkaListener(topics="log.created", groupId="log-consumer")
     public void handleLog(String logMessage){
         LocalDateTime now = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
@@ -20,3 +20,4 @@ public class LogConsumer {
         System.out.println(String.format("[%s] %s", formattedDateTime, logMessage));
     }
 }
+
