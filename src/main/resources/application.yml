@@ -1,6 +1,6 @@
 spring:
   kafka:
-    bootstrap-servers: localhost:9092
+    bootstrap-servers: kafka:9093
     consumer:
       group-id: log-consumer
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
